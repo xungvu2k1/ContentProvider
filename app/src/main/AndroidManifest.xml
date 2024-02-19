@@ -20,7 +20,6 @@
             android:authorities="com.example.myapp.provider"
             android:enabled="true"
             android:exported="true"
-            android:readPermission="com.example.myapp.provider"
             />
 
         <activity

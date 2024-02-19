@@ -19,6 +19,10 @@ public class CheckedItem {
         this.fruitValid = fruitValid;
     }
 
+    public CheckedItem(){
+
+    }
+
     public int getFruitId() {
         return fruitId;
     }
@@ -34,5 +38,6 @@ public class CheckedItem {
     public void setFruitValid(int fruitValid) {
         this.fruitValid = fruitValid;
     }
+
 }
 

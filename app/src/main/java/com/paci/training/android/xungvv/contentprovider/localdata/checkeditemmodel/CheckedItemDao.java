@@ -1,5 +1,7 @@
 package com.paci.training.android.xungvv.contentprovider.localdata.checkeditemmodel;
 
+import android.database.Cursor;
+
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
@@ -16,14 +18,17 @@ public interface CheckedItemDao {
     LiveData<List<CheckedItem>> getAllCheckedItem();
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)// bỏ qua fruit mới nếu nó đã có trong danh sách
-    void insert(CheckedItem checkedItem);
+    long insert(CheckedItem checkedItem);
+
+    @Query("SELECT * FROM checked_item_table")
+    Cursor findAll();
 
     @Update
-    void update(CheckedItem checkedItem);
+    int update(CheckedItem checkedItem);
 
     @Delete
-    void delete(CheckedItem checkedItem);
+    int delete(CheckedItem checkedItem);
 
     @Query("DELETE FROM checked_item_table")
-    void deleteAll();
+    int deleteAll();
 }
